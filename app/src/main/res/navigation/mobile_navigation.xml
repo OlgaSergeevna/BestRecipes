@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_recipes">
+
+    <fragment
+        android:id="@+id/nav_new_recipe"
+        android:name="com.sylko.bestrecipes.ui.add.AddNewRecipeFragment"
+        android:label="@string/fragment_add_new_recipe"
+        tools:layout="@layout/fragment_add_new_recipe" >
+        <action
+            android:id="@+id/action_nav_new_recipe_to_listOfIngredientsFragment"
+            app:destination="@id/nav_list_of_ingredients" />
+        <action
+            android:id="@+id/action_nav_new_recipe_to_cookingInstructionsFragment"
+            app:destination="@id/nav_cooking_instructions" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_recipes"
+        android:name="com.sylko.bestrecipes.ui.recipes.RecipesFragment"
+        android:label="@string/fragment_recipes"
+        tools:layout="@layout/fragment_recipes" >
+        <action
+            android:id="@+id/action_nav_recipes_to_oneRecipeFragment"
+            app:destination="@id/nav_one_recipe" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="com.sylko.bestrecipes.ui.authorization.LoginFragment"
+        android:label="@string/menu_authorization"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_nav_login_to_nav_register"
+            app:destination="@id/nav_register" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="com.sylko.bestrecipes.ui.authorization.RegisterFragment"
+        android:label="@string/menu_authorization"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/nav_list_of_ingredients"
+        android:name="com.sylko.bestrecipes.ui.add.ListOfIngredientsFragment"
+        android:label="@string/nav_list_of_ingredients"
+        tools:layout="@layout/fragment_list_of_ingredients"/>
+    <fragment
+        android:id="@+id/nav_cooking_instructions"
+        android:name="com.sylko.bestrecipes.ui.add.CookingInstructionsFragment"
+        android:label="@string/nav_cooking_instructions"
+        tools:layout="@layout/fragment_cooking_instructions" />
+    <fragment
+        android:id="@+id/nav_one_recipe"
+        android:name="com.sylko.bestrecipes.ui.onerecipe.OneRecipeFragment"
+        android:label="@string/recipe" />
+</navigation>
